@@ -16,7 +16,7 @@ import (
 )
 
 //go:embed zarf.schema.json
-var zarfSchema embed.FS
+var ZarfSchema embed.FS
 
 func main() {
 	ctx, cancel := context.WithCancel(context.Background())
@@ -36,6 +36,6 @@ func main() {
 		}
 	}()
 
-	lint.ZarfSchema = zarfSchema
+	lint.ZarfSchema = ZarfSchema
 	cmd.Execute(ctx)
 }
